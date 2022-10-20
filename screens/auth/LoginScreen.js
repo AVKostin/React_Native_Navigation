@@ -87,7 +87,7 @@ export default function LoginScreen() {
                                 Зарегистрироваться
                             </Text>
                         </TouchableOpacity>
-                        <Text style={styles.headerTitle}>
+                        <Text style={styles.headerEnter}>
                             Уже есть аккаунт? Войти
                         </Text>
                     </View>
@@ -114,10 +114,17 @@ const styles = StyleSheet.create({
         borderColor: "#f0f8ff",
         height: 40,
         borderRadius: 6,
-        color: "#f0f8ff",
+        color: "#f6f6f6",
+        marginHorizontal: 40,
     },
     form: {
-        marginHorizontal: 40,
+        marginHorizontal: 0,
+        backgroundColor: "#ffffff",
+        borderTopLeftRadius: 25,
+        borderTopRightRadius: 25,
+        height: 549,
+        top: 63,
+        justifyContent: "flex-end",
     },
     inputTitle: {
         color: "#f0f8ff",
@@ -131,7 +138,8 @@ const styles = StyleSheet.create({
         marginTop: 43,
         justifyContent: "center",
         alignItems: "center",
-
+        marginHorizontal: 40,
+        marginBottom: 16,
         ...Platform.select({
             ios: {
                 backgroundColor: "transparent",
@@ -149,10 +157,15 @@ const styles = StyleSheet.create({
     },
     header: {
         alignItems: "center",
-        marginBottom: 150,
+        marginBottom: 32,
     },
     headerTitle: {
         fontSize: 30,
-        color: "#f0f8ff",
+        color: "#212121",
+    },
+    headerEnter: {
+        fontSize: 18,
+        color: "#1B4371",
+        justifyContent: "center",
     },
 });
