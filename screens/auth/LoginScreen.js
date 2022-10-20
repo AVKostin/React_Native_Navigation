@@ -12,6 +12,7 @@ import {
 } from "react-native";
 
 const initialState = {
+    login: "",
     email: "",
     password: "",
 };
@@ -43,13 +44,24 @@ export default function LoginScreen() {
                     >
                         <View style={styles.header}>
                             <Text style={styles.headerTitle}>Регистрация</Text>
-                            {/* <Text style={styles.headerTitle}>Welcome back</Text> */}
                         </View>
-                        <View>
-                            {/* <Text style={styles.inputTitle}>EMAIL ADDRES</Text> */}
+                        <View >
                             <TextInput
                                 style={styles.input}
-                                textAlign={"center"}
+                                placeholder="Логин"
+                                onFocus={() => setIsShowKeyboard(true)}
+                                value={state.login}
+                                onChangeText={(value) =>
+                                    setState((prevState) => ({
+                                        ...prevState,
+                                        login: value,
+                                    }))
+                                }
+                            />
+                        </View>
+                        <View style={{ marginTop: 20 }}>
+                            <TextInput
+                                style={styles.input}
                                 placeholder="Адрес электронной почты"
                                 onFocus={() => setIsShowKeyboard(true)}
                                 value={state.email}
@@ -62,10 +74,8 @@ export default function LoginScreen() {
                             />
                         </View>
                         <View style={{ marginTop: 20 }}>
-                            {/* <Text style={styles.inputTitle}>PASSWORD</Text> */}
                             <TextInput
                                 style={styles.input}
-                                textAlign={"center"}
                                 placeholder="Пароль"
                                 secureTextEntry={true}
                                 onFocus={() => setIsShowKeyboard(true)}
@@ -87,9 +97,11 @@ export default function LoginScreen() {
                                 Зарегистрироваться
                             </Text>
                         </TouchableOpacity>
+                        <View  style={styles.header}>
                         <Text style={styles.headerEnter}>
                             Уже есть аккаунт? Войти
                         </Text>
+                        </View>
                     </View>
                 </ImageBackground>
             </View>
@@ -112,10 +124,14 @@ const styles = StyleSheet.create({
     input: {
         borderWidth: 1,
         borderColor: "#f0f8ff",
-        height: 40,
+        height: 50,
         borderRadius: 6,
-        color: "#f6f6f6",
-        marginHorizontal: 40,
+        color: "#bdbdbdbd",
+        marginHorizontal: 16,
+        textAlign: 'left',
+        paddingLeft:16,
+        backgroundColor: "#eaeaea"
+
     },
     form: {
         marginHorizontal: 0,
@@ -123,13 +139,14 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 25,
         borderTopRightRadius: 25,
         height: 549,
-        top: 63,
+        top: 150,
         justifyContent: "flex-end",
     },
     inputTitle: {
-        color: "#f0f8ff",
+        color: "#bdbdbd",
         marginBottom: 16,
-        fontSize: 18,
+        fontSize: 16,
+        marginLeft:0,
     },
     btn: {
         borderRadius: 100,
@@ -138,7 +155,7 @@ const styles = StyleSheet.create({
         marginTop: 43,
         justifyContent: "center",
         alignItems: "center",
-        marginHorizontal: 40,
+        marginHorizontal: 16,
         marginBottom: 16,
         ...Platform.select({
             ios: {
@@ -153,7 +170,7 @@ const styles = StyleSheet.create({
     },
     btnTitle: {
         color: Platform.OS === "ios" ? "#ffa500" : "#f0f8ff",
-        fontSize: 18,
+        fontSize: 16,
     },
     header: {
         alignItems: "center",
@@ -161,11 +178,13 @@ const styles = StyleSheet.create({
     },
     headerTitle: {
         fontSize: 30,
+        fontWeight: "bold",
+
         color: "#212121",
     },
     headerEnter: {
         fontSize: 18,
         color: "#1B4371",
-        justifyContent: "center",
+        // justifyContent: "center",
     },
 });
