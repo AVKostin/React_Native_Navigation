@@ -36,6 +36,10 @@ export default function LoginScreen() {
                     style={styles.image}
                     source={require("../../assets/images/BG_Mountings.jpg")}
                 >
+
+                    <View >
+
+                    </View>
                     <View
                         style={{
                             ...styles.form,
@@ -43,23 +47,9 @@ export default function LoginScreen() {
                         }}
                     >
                         <View style={styles.header}>
-                            <Text style={styles.headerTitle}>Регистрация</Text>
+                            <Text style={styles.headerTitle}>Войти</Text>
                         </View>
                         <View >
-                            <TextInput
-                                style={styles.input}
-                                placeholder="Логин"
-                                onFocus={() => setIsShowKeyboard(true)}
-                                value={state.login}
-                                onChangeText={(value) =>
-                                    setState((prevState) => ({
-                                        ...prevState,
-                                        login: value,
-                                    }))
-                                }
-                            />
-                        </View>
-                        <View style={{ marginTop: 20 }}>
                             <TextInput
                                 style={styles.input}
                                 placeholder="Адрес электронной почты"
@@ -94,12 +84,12 @@ export default function LoginScreen() {
                             onPress={keyboardHide}
                         >
                             <Text style={styles.btnTitle}>
-                                Зарегистрироваться
+                                Войти
                             </Text>
                         </TouchableOpacity>
                         <View  style={styles.header}>
                         <Text style={styles.headerEnter}>
-                            Уже есть аккаунт? Войти
+                        Нет аккаунта? Зарегистрироваться
                         </Text>
                         </View>
                     </View>
@@ -118,15 +108,46 @@ const styles = StyleSheet.create({
         flex: 1,
         resizeMode: "cover",
         justifyContent: "flex-end",
-        // justifyContent: "center",
-        // alignItems: "center",
+    },
+    avatar:{
+        width: 120,
+        height: 120,
+        left: 134,
+        top: 203,
+        zIndex:1,
+        backgroundColor: "#F6F6F6",
+        borderRadius: 16,
+    },
+    add:{
+        color: "#ff6c00",
+        width: 25,
+        height: 25,
+        left: 241,
+        top: 313,
+        zIndex:2,
+        fontSize: 26,
+        textAlign: 'center',
+        fontWeight: "200",
+        transform: [{ translateY: 18 }]
+    },
+    cicle:{
+        color: "#ff6c00",
+        width: 25,
+        height: 25,
+        left: 241,
+        top: 313,
+        zIndex:2,
+        borderWidth: 1,
+        borderColor: "#ff6c00",
+        fontSize: 26,
+        borderRadius: 100,
     },
     input: {
         borderWidth: 1,
         borderColor: "#f0f8ff",
         height: 50,
         borderRadius: 6,
-        color: "#bdbdbdbd",
+        fontColor: "#bdbdbd",
         marginHorizontal: 16,
         textAlign: 'left',
         paddingLeft:16,
@@ -138,12 +159,12 @@ const styles = StyleSheet.create({
         backgroundColor: "#ffffff",
         borderTopLeftRadius: 25,
         borderTopRightRadius: 25,
-        height: 549,
+        height: 489,
         top: 150,
         justifyContent: "flex-end",
     },
     inputTitle: {
-        color: "#bdbdbd",
+        // color: "#bdbdbd",
         marginBottom: 16,
         fontSize: 16,
         marginLeft:0,
@@ -179,12 +200,11 @@ const styles = StyleSheet.create({
     headerTitle: {
         fontSize: 30,
         fontWeight: "bold",
-
         color: "#212121",
     },
     headerEnter: {
         fontSize: 18,
         color: "#1B4371",
-        // justifyContent: "center",
+        marginBottom: 111,
     },
 });
