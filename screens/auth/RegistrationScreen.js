@@ -12,13 +12,13 @@ import {
 } from "react-native";
 
 const initialState = {
-    login: "",
     email: "",
+    login: "",
     password: "",
 };
 
 export default function RegistrationScreen() {
-    console.log(Platform.OS);
+    // console.log(Platform.OS);
     const [isShowKeyboard, setIsShowKeyboard] = useState(false);
     const [state, setState] = useState(initialState);
 
