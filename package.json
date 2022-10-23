@@ -1,0 +1,26 @@
+{
+  "name": "screens",
+  "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "overrides": {
+    "react-devtools-core": "~4.25.0"
+  },
+  "dependencies": {
+    "expo": "~46.0.16",
+    "expo-font": "^10.2.1",
+    "expo-status-bar": "~1.4.0",
+    "react": "18.0.0",
+    "react-native": "0.69.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "babel-preset-expo": "^9.2.0"
+  },
+  "private": true
+}
