@@ -12,6 +12,7 @@
     "react-devtools-core": "~4.25.0"
   },
   "dependencies": {
+    "@react-navigation/native": "^6.0.13",
     "expo": "~46.0.16",
     "expo-font": "^10.2.1",
     "expo-status-bar": "~1.4.0",
