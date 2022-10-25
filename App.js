@@ -2,20 +2,29 @@ import React from "react";
 import LoginScreen from "./screens/auth/LoginScreen";
 import RegistrationScreen from "./screens/auth/RegistrationScreen";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-const AuthStack = createStackNavigator();
+const AuthStack = createNativeStackNavigator();
 
 export default function App() {
     return (
-        <AuthStack>
-            <NavigationContainer>
-                <AuthStack.Screen name="Login" component={LoginScreen} />
+        <NavigationContainer>
+            <AuthStack.Navigator>
                 <AuthStack.Screen
+                    options={{
+                        headerShown: false,
+                    }}
+                    name="Login"
+                    component={LoginScreen}
+                />
+                <AuthStack.Screen
+                    options={{
+                        headerShown: false,
+                    }}
                     name="Register"
                     component={RegistrationScreen}
                 />
-            </NavigationContainer>
-        </AuthStack>
+            </AuthStack.Navigator>
+        </NavigationContainer>
     );
 }
