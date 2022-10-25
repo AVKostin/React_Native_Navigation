@@ -9,7 +9,6 @@ export const styles = StyleSheet.create({
         flex: 1,
         resizeMode: "cover",
         justifyContent: "flex-end",
-        // position: "absolute",
         left: 0,
         top: 0,
         width: Dimensions.get("window").width,
