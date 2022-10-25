@@ -9,14 +9,17 @@ import {
     Platform,
     Keyboard,
     TouchableWithoutFeedback,
+    Button,
 } from "react-native";
+
+// import { Button } from "react-native-web";
 
 const initialState = {
     email: "",
     password: "",
 };
 
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }) {
     // console.log(Platform.OS);
     const [isShowKeyboard, setIsShowKeyboard] = useState(false);
     const [state, setState] = useState(initialState);
@@ -81,6 +84,11 @@ export default function LoginScreen() {
                             <Text style={styles.btnTitle}>Войти</Text>
                         </TouchableOpacity>
                         <View style={styles.header}>
+                            <Button
+                                onPress={() => navigation.navigate("Register")}
+                                title="register"
+                            />
+
                             <Text style={styles.headerEnter}>
                                 Нет аккаунта? Зарегистрироваться
                             </Text>
