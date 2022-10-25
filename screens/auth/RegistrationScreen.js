@@ -9,6 +9,7 @@ import {
     Platform,
     Keyboard,
     TouchableWithoutFeedback,
+    Button,
 } from "react-native";
 
 const initialState = {
@@ -17,7 +18,9 @@ const initialState = {
     password: "",
 };
 
-export default function RegistrationScreen() {
+export default function RegistrationScreen({ navigation }) {
+    // console.log("navigation: ", navigation);
+
     const [isShowKeyboard, setIsShowKeyboard] = useState(false);
     const [state, setState] = useState(initialState);
 
@@ -99,6 +102,10 @@ export default function RegistrationScreen() {
                             </Text>
                         </TouchableOpacity>
                         <View style={styles.header}>
+                            <Button
+                                onPress={() => navigation.navigate("Login")}
+                                title="Login"
+                            />
                             <Text style={styles.headerEnter}>
                                 Уже есть аккаунт? Войти
                             </Text>
