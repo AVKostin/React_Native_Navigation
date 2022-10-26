@@ -9,7 +9,7 @@ import {
     TouchableWithoutFeedback,
 } from "react-native";
 
-import { styles } from "./LoginScreen.module";
+import { styles } from "./Home.module";
 
 const initialState = {
     email: "",
